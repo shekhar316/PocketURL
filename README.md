@@ -60,15 +60,15 @@ https://user-images.githubusercontent.com/57747076/157823604-b4e3e9e9-526d-49e4-
 
 ## Technical Specifications
 
-* Backend Framework: Express JS (NodeJS)
-* Frontend Framework: EJS
-* CSS Framework: Bootstrap 5.0
-* Database: SQL
-* Architechture: MVC (Model-View-Controller)
-* Payment Gateway: Razorpay
-* Login Method: OAuth Google Login
-* ORM: Sequelize
-* Node JS Dependencies:
+* **Backend Framework:** Express JS (NodeJS)
+* **Frontend Framework:** EJS
+* **CSS Framework:** Bootstrap 5.0
+* **Database:** SQL
+* **Architechture:** MVC (Model-View-Controller)
+* **Payment Gateway:** Razorpay
+* **Login Method:** OAuth Google Login
+* **ORM:** Sequelize
+* **Node JS Dependencies:**
   * "body-parser": "^1.19.1",
   * "cookie-session": "^2.0.0",
   * "cors": "^2.8.5",
