@@ -55,3 +55,35 @@ https://user-images.githubusercontent.com/57747076/157823604-b4e3e9e9-526d-49e4-
 * Create a SQL database and import `shekhars_pocketurl.sql`
 * Update the `.env` file with your credentials.
 * Run `npm start` for production mode and `npm test` for development mode.
+
+<br/>
+
+## Technical Specifications
+
+* Backend Framework: Express JS (NodeJS)
+* Frontend Framework: EJS
+* CSS Framework: Bootstrap 5.0
+* Database: SQL
+* Architechture: MVC (Model-View-Controller)
+* Payment Gateway: Razorpay
+* Login Method: OAuth Google Login
+* ORM: Sequelize
+* Node JS Dependencies:
+  * "body-parser": "^1.19.1",
+  * "cookie-session": "^2.0.0",
+  * "cors": "^2.8.5",
+  * "dotenv": "^15.0.0",
+  * "easyinvoice": "^2.2.6",
+  * "ejs": "^3.1.6",
+  * "express": "^4.17.2",
+  * "mysql2": "^2.3.3",
+  * "nanoid": "^3.2.0",
+  * "node-schedule": "^2.1.0",
+  * "nodemailer": "^6.7.2",
+  * "nodemon": "^2.0.15",
+  * "passport": "^0.5.2",
+  * "passport-google-oauth20": "^2.0.0",
+  * "razorpay": "^2.8.0",
+  * "sequelize": "^6.15.0",
+  * "url-exists": "^1.0.3",
+  * "valid-url": "^1.0.9"
