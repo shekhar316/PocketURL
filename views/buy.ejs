@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head') %>
+        <title>PocketURL</title>
+</head>
+
+<body>
+    <!-- Loading GIF till the page loads -->
+    <%- include('partials/loading') %>
+        <!-- Main Home Page Navbar -->
+        <%- include('partials/navbar') %>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <br><br>
+                        <h1><b>PocketURL PRO</b></h1>
+                        <p class="lead">URLs on your fingertip.</p>
+
+                        <hr class="my-4">
+
+                        <p>PocketURL is a URL shortener with amazing features. PocketURL PRO allows you to manage and
+                            protect
+                            your URLs with an ease.</p>
+                        <br>
+
+                        <!-- <a href="" class="bg-red btn btn-lg text-white me-4 mt-4">My Dashboard <i class="fas fa-link"></i></a> -->
+                    </div>
+                    
+                </div>
+            </div>
+
+
+            <div class="container table-responsive p-5">
+                <table class="table table-hover align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col" colspan="1" class="bg-lightBlue text-blue col-md-4">Features</th>
+                            <th scope="col" colspan="1" class="bg-blue text-white col-md-4 text-center">Basic/ Guest</th>
+                            <th scope="col" colspan="1" class="bg-red text-white col-md-4 text-center">Pro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th colspan="1" scope="row">Unlimited Short URLs</th>
+                            <td colspan="1" class="text-center"><i class="fas fa-check-circle text-success"></i></td>
+                            <td colspan="1" class="text-center"><i class="fas fa-check-circle text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <th colspan="1" scope="row">QR Code Generation</th>
+                            <td colspan="1" class="text-center"><i class="fas fa-check-circle text-success"></i></td>
+                            <td colspan="1" class="text-center"><i class="fas fa-check-circle text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <th colspan="1" scope="row">Custom Alias</th>
+                            <td colspan="1" class="text-center"><i class="fas fa-times-circle text-danger"></i></td>
+                            <td colspan="1" class="text-center"><i class="fas fa-check-circle text-success"></i></td>
+                        </tr>
+                        
+                        <tr>
+                            <th colspan="1" scope="row">Custom Link Expiry</th>
+                            <td colspan="1" class="text-center"><i class="fas fa-times-circle text-danger"></i><br>30 Days</td>
+                            <td colspan="1" class="text-center"><i class="fas fa-check-circle text-success"></i><br>Custom</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="bg-lightBlue">
+                            <th colspan="1" scope="row">Price</th>
+                            <td colspan="1" class="text-center"><b>FREE</b></td>
+                            <td colspan="1" class="text-center"><b>Rs. 100/- INR One Time</b></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+
+            <div class="container mx-auto m-5 bg-lightBlue">
+                <div class="col-md-6 mx-auto p-1 pt-5 pb-5">
+                    <h3 class="text-blue">Proceed to Buy?</h3>
+                    <br>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Your Name:</label>
+                        <input type="text" class="form-control" name="name" value="<%=user.name%>" disabled>
+                        <div id="couponMsg" class="form-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Your Email:</label>
+                        <input type="text" class="form-control" name="email" value="<%=user.email%>" disabled>
+                        <div id="couponMsg" class="form-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Price:</label>
+                        <input type="text" class="form-control" name="price" value="<%=order.amount/100%>" disabled>
+                        <div id="couponMsg" class="form-text"></div>
+                    </div>
+                    <br>
+                    <% if(!user.role){ %> 
+                    <button class="text-center text-white btn btn-lg bg-red" id="rzp-button1">Pay Now</button>
+                    <% }else{ %> 
+                        <div class="alert alert-success" role="alert">
+                            You are already subscribed to PocketURL PRO.
+                          </div>
+                    <% } %> 
+                    <br>
+                </div>
+            </div>
+
+            <div class="bg-black">
+                <p class="m-0 text-center p-3 text-white"><b>&copy; PocketURL</b></p>
+            </div>
+
+            <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        var options = {
+            "key": "<%=payKey%>", // Enter the Key ID generated from the Dashboard
+            "amount": "<%=order.amount%>", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "currency": "INR",
+            "name": "PocketURL",
+            "description": "Url Shortner App",
+            "image": "https://raw.githubusercontent.com/shekhar316/ImageHosting/main/IconP.png",
+            "order_id": "<%=order.id%>", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "callback_url": "https://pocketurl.shekharsaxena.co.in/pay/save/<%=order.notes%>/<%=order.amount%>/<%=order.receipt%>",
+            "prefill": {
+                "name": "<%=user.name%>",
+                "email": "<%=user.email%>",
+            },
+            "notes": {
+                "address": "Razorpay Corporate Office"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        document.getElementById('rzp-button1').onclick = function(e){
+            rzp1.open();
+            e.preventDefault();
+        }
+    </script>
+
+</body>
+
+</html>

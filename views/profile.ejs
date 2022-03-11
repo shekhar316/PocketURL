@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head') %>
+        <title>PocketURL</title>
+</head>
+
+<body>
+    <!-- Loading GIF till the page loads -->
+    <%- include('partials/loading') %>
+        <!-- Main Home Page Navbar -->
+        <%- include('partials/navbar') %>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <br><br>
+                        <h1><b>User Profile</b></h1>
+                        <p class="lead">View your profile.</p>
+
+                        <hr class="my-4">
+
+                        <p>PocketURL is a URL shortener with amazing features. PocketURL PRO allows you to manage and
+                            protect
+                            your URLs with an ease.</p>
+                        <br>
+
+                        <!-- <a href="" class="bg-red btn btn-lg text-white me-4 mt-4">My Dashboard <i class="fas fa-link"></i></a> -->
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="container mx-auto m-5 bg-lightBlue">
+                <div class="col-md-6 mx-auto p-1 pt-5 pb-5">
+                        <h3 class="text-blue text-center">User Details</h3>
+                        <br>
+                        <div class="card mx-auto" style="width: 18rem;">
+                            <img src="<%=u.thumbnail%>" class="card-img-top mx-auto" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title text-center"><%=u.name%></h5>
+                              <p class="card-text text-center"><%=u.email%></p>
+                              <% if(u.role) {%>
+                                <p class="card-text text-center text-red"><b>PRO Customer</b></p>
+                                <% }else{ %>
+                                    <p class="card-text text-center text-blue"><b>You are not a PRO customer.</b></p>
+                                    <% } %> 
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+            <div class="bg-black">
+                <p class="m-0 text-center p-3 text-white"><b>&copy; PocketURL</b></p>
+            </div>
+    
+</body>
+
+</html>

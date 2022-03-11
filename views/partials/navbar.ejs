@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+    <div class="container-fluid">
+        <a class="navbar-brand mb-2 mt-2 me-5" href="/"><i class="fas fa-link"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/pay">Pricing & Pro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/static/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/static/contact">Contact Us</a>
+                </li>
+
+                <% if(user){%>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          User Dashboard
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="/user/url">Manage URLs</a></li>
+                          <li><a class="dropdown-item" href="/user/transactions">Manage Transactions</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="/user/profile">View Profile</a></li>
+                        </ul>
+                      </li>
+                       
+                  <% } %>  
+            </ul>
+             
+              
+            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto my-auto">
+                <% if(!user) {%> 
+                <a href="/auth/login/google" class="bg-white btn text-blue me-4 mt-2">Login <i class="fab fa-google-plus-g"></i></a>
+                <% }else{ %> 
+                    <a href="/user/url" class="bg-white btn text-blue me-4 mt-2">My Dashboard <i class="fas fa-link"></i></a>
+                    <a href="/auth/logout" class="bg-red btn text-white me-4 mt-2">Logout <i class="fas fa-sign-out-alt"></i></a>
+                <% } %>
+                
+            </ul>
+        </div>
+    </div>
+</nav>

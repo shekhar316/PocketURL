@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head') %>
+        <title>PocketURL</title>
+</head>
+
+<body>
+    <!-- Loading GIF till the page loads -->
+    <%- include('partials/loading') %>
+        <!-- Main Home Page Navbar -->
+        <%- include('partials/navbar') %>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <br><br>
+                        <h1><b>About Us</b></h1>
+                        <p class="lead">PocketURL | Urls on your fingertip.</p>
+
+                        <hr class="my-4">
+
+                        <p>PocketURL is a URL shortener with amazing features. PocketURL PRO allows you to manage and
+                            protect
+                            your URLs with an ease.</p>
+                        <br>
+                        <h3>Features of PocketURL: </h3>
+                        <br>
+                        <ul>
+                            <li>Create shorl urls for long url redirection.</li>
+                            <li>Generate QR codes for your short urls.</li>
+                            <li>Custom alias for short urls. (PRO) </li>
+                            <li>Set a custom expiration date for your short urls (PRO)</li>
+                            <li>Update, manage, delete generated short urls. (PRO)</li>
+                        </ul>
+
+                        <br>
+
+                        <h3>FAQs</h3>
+                        <br>
+
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  <span class="text-blue"> <b>What is a URL Shortner?</b> </span>
+                                </button>
+                              </h2>
+                              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    URL shortening is a technique on the internet in which a URL may be made substantially shorter and still direct to the required page.
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <span class="text-blue"> <b>What are the benifits of URL Shortner?</b> </span>
+                                </button>
+                              </h2>
+                              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                  <ul>
+                                      <li>They offer the ability to track the performance.
+                                    <li>Get Analytical data like no of clicks.</li>
+                                    <li> They use fewer of your precious characters.</li>
+                                    <li> URL Shorteners Promote Sharing. </li>
+                                    <li> People are used to them.</li>
+                                    <li> They lead to a higher click-through rate.</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <span class="text-blue"> <b>What is custom alias?</b> </span>
+                                </button>
+                              </h2>
+                              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    You may create a custom alias that can be intuitive and descriptive of your shortURL. This makes url easy to remember and share. Custom alias looks like <tt>www.pocketurl.shekharsaxena.co.in/yourAlias</tt>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                      <span class="text-blue"> <b>What is a QR Code?</b> </span>
+                                  </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                  <div class="accordion-body">
+                                    Basically, a QR code works in the same way as a barcode at the supermarket. It is a machine-scannable image that can instantly be read using a Smartphone camera and redirects you to the desired url.
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                  <span class="text-blue"> <b>Why should I prefer QR over link?</b> </span>
+                              </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                QR Code can make your bussiness to grow more. It is easy to scan a image rather than typing whole url.
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                        <!-- <a href="" class="bg-red btn btn-lg text-white me-4 mt-4">My Dashboard <i class="fas fa-link"></i></a> -->
+                        
+                        <br><br>
+
+                        
+                        
+                        <div class="container mx-auto m-5">
+                            <h3 class="text-center">Application Demo</h3>
+                        <br><br>
+                            <div class="flex-center"><iframe class="flex-center" width="560" height="315" src="https://www.youtube.com/embed/5N3zdAcav6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="container mx-auto m-5 bg-lightBlue">
+                <div class="col-md-6 mx-auto p-1 pt-5 pb-5">
+                        <h3 class="text-blue text-center">Developed By</h3>
+                        <br>
+                        <div class="card mx-auto" style="width: 18rem;">
+                            <img src="https://raw.githubusercontent.com/shekhar316/ImageHosting/main/ShekharSaxena.JPG" class="card-img-top mx-auto" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title text-center">Shekhar Saxena</h5>
+                              <p class="card-text text-center">shekharsaxena316@gmail.com <br>Contact No: +91-9412446081 </p>
+                            </div>
+                        
+                            <div class="social-icons text-center">
+                                <a href="https://wa.me/+919412446081"><i class="fab fa-whatsapp text-blue"></i></a>
+                                <a href="https://www.linkedin.com/in/shekharsaxena316"><i class="fab fa-linkedin-in text-blue"></i></a>
+                                <a href="https://github.com/shekhar316"><i class="fab fa-github text-blue"></i></a>
+                                <a href="https://www.facebook.com/shekhar.saxena.71216/"><i class="fab fa-facebook text-blue"></i></a>
+                                <a href="https://twitter.com/SHEKHAR15172673"><i class="fab fa-twitter text-blue"></i></a>
+                            </div>
+                            <br>
+                        </div>
+                </div>
+            </div>
+
+            <div class="bg-black">
+                <p class="m-0 text-center p-3 text-white"><b>&copy; PocketURL</b></p>
+            </div>
+    
+</body>
+
+</html>

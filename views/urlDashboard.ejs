@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head') %>
+        <title>PocketURL</title>
+</head>
+
+<body>
+    <!-- Loading GIF till the page loads -->
+    <%- include('partials/loading') %>
+        <!-- Main Home Page Navbar -->
+        <%- include('partials/navbar') %>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <br><br>
+                        <h1><b>URL Dashboard</b></h1>
+                        <p class="lead">Create and manage your short urls.</p>
+
+                        <hr class="my-4">
+
+                        <p>PocketURL is a URL shortener with amazing features. PocketURL PRO allows you to manage and
+                            protect
+                            your URLs with an ease.</p>
+                        <br>
+
+                        <!-- <a href="" class="bg-red btn btn-lg text-white me-4 mt-4">My Dashboard <i class="fas fa-link"></i></a> -->
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="container mx-auto m-5 bg-lightBlue">
+                <div class="col-md-10 mx-auto p-1 pt-5 pb-5">
+                        <h3 class="text-blue">URL Details</h3>
+                        <br>
+                        <a href="/url/add" class="text-center text-white btn btn-lg bg-red" id="rzp-button1">Create Short URL</a>
+                        <br>
+                        <br>
+                        <% for(var i = 0; i < urls.length; i++) {%> 
+                            <div class="card">
+                                <% if(new Date(urls[i].dataValues.edate) > new Date().getTime()) {%> 
+                                    <h5 class="card-header">Active</h5>
+                                <% }else{ %>
+                                    <h5 class="card-header">Expired</h5>
+                                <% } %> 
+                                <div class="card-body">
+                                <a href="https://pocketurl.shekharsaxena.co.in/<%=urls[i].dataValues.shortid%>"><h5 id="url<%=i%>"  class="card-title"><tt>https://pocketurl.shekharsaxena.co.in/<%=urls[i].dataValues.shortid%></tt></h5></a><br>
+                                <p class="card-text"><b>Long URL:</b> <a href="<%=urls[i].dataValues.longURL%>"><tt><%=urls[i].dataValues.longURL%> </tt></a></p>
+                                <p class="card-text"><b>Expiry Date: </b><%=urls[i].dataValues.edate%></p>
+                                <p class="card-text"><b>Open Count:</b> <%=urls[i].dataValues.openCount%> </p>
+                                <a href="/url/update/<%=urls[i].dataValues.shortid%>" class="btn text-white bg-blue">Update</a>
+                                <button onclick="qr('url<%=i%>')" class="btn text-white btn-success">Show QR</button>
+                                <a href="/url/delete/<%=urls[i].dataValues.shortid%>" class="btn text-white bg-red">Delete</a>
+                                </div>
+                            </div>
+                            <br>
+                        <% } %> 
+                </div>
+            </div>
+
+            <div class="bg-black">
+                <p class="m-0 text-center p-3 text-white"><b>&copy; PocketURL</b></p>
+            </div>
+    
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+            <script>
+                function qr(id){
+                    var url = document.getElementById(id).innerText
+                    var qrCode = new QRious({
+                        value: url,
+                        background: '#EFF4FD',
+                        foreground: '#152247',
+                        size: 256
+                    });
+ 
+                    var imageData = qrCode.toDataURL();
+                    console.log(imageData)
+                    Swal.fire({
+                        imageUrl: imageData,
+                        // imageHeight: 150,
+                        imageAlt: 'QR Code',
+                        icon: 'success',
+                        title: 'QR Code Generated!',
+                        footer: `<a href="${imageData}" target="_blank" download="image.png">Download QR Code</a>`
+                    })
+                }
+
+                
+                
+                //=> "data:image/png;base64,iVBOR...AIpqDnseH86KAAAAAElFTkSuQmCC"
+            </script>
+</body>
+
+</html>

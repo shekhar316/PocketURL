@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head') %>
+        <title>PocketURL</title>
+</head>
+
+<body>
+    <!-- Loading GIF till the page loads -->
+    <%- include('partials/loading') %>
+        <!-- Main Home Page Navbar -->
+        <%- include('partials/navbar') %>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <br><br>
+                        <h1><b>Short URL Details</b></h1>
+                        <p class="lead">View the deatils of your URL.</p>
+
+                        <hr class="my-4">
+
+                        <p>PocketURL is a URL shortener with amazing features. PocketURL PRO allows you to manage and
+                            protect
+                            your URLs with an ease.</p>
+                        <br>
+
+                        <!-- <a href="" class="bg-red btn btn-lg text-white me-4 mt-4">My Dashboard <i class="fas fa-link"></i></a> -->
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="container mx-auto m-5 bg-lightBlue">
+                <div class="col-md-6 mx-auto p-1 pt-5 pb-5">
+                    <form action="updateURL" method="post"></form>
+                        <h3 class="text-blue">URL Details</h3>
+                        <br>
+                      
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Long URL:</label>
+                            <input type="text" class="form-control" name="lurl" value="<%=url.longURL%>" required readonly>
+                            <div id="couponMsg" class="form-text"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Short URL:</label>
+                            <input type="text" class="form-control" name="surl" value="https://pocketurl.shekharsaxena.co.in/<%=url.shortid%>" required readonly>
+                            <div id="couponMsg" class="form-text"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Expiration Date:</label>
+                            <input type="text" class="form-control" name="edate" value="<%=url.edate%>" required readonly>
+                            <div id="couponMsg" class="form-text"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Clicks:</label>
+                            <input type="text" class="form-control" name="click" value="<%=url.openCount%>" required readonly>
+                            <div id="couponMsg" class="form-text"></div>
+                        </div>
+         
+                            <a href="/user/url" class="text-center text-white btn btn-lg bg-red">Return to Dashboard</a>
+
+                    </form>
+                </div>
+            </div>
+
+            <div class="bg-black">
+                <p class="m-0 text-center p-3 text-white"><b>&copy; PocketURL</b></p>
+            </div>
+            
+
+            
+            
+            <script>
+                <%if(alert == 'success'){%>
+                    swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        text: 'ShortURL is generate successfully!',
+                        footer: '<a href="https://pocketurl.shekharsaxena.co.in/<%=url.shortid%>">https://pocketurl.shekharsaxena.co.in/<%=url.shortid%></a>'
+                    })
+                <% } %> 
+
+                <%if(alert == 'fail'){%>
+                    swal.fire({
+                        icon: 'error',
+                        title: 'Oops!',
+                        allowOutsideClick: false,
+                        text: 'Something went wrong. Please try again later!',
+                        footer: '<a href="https://pocketurl.shkharsaxena.co.in/">Go to Homepage</a>',
+                    }).then(function (){
+                        window.location = "https://pocketurl.shekharsaxena.co.in"
+                    })
+                <% } %> 
+
+                <%if(alert == 'alias'){%>
+                    swal.fire({
+                        icon: 'error',
+                        title: 'Oops!',
+                        allowOutsideClick: false,
+                        text: 'Custom Alias is not avaiable, Please try a different one!',
+                        footer: '<a href="https://pocketurl.shkharsaxena.co.in/url/add">Try with Another Alias</a>'
+                    }).then(function (){
+                        window.location = "https://pocketurl.shekharsaxena.co.in/url/add"
+                    })
+                <% } %> 
+
+                <%if(alert == 'invalid'){%>
+                    swal.fire({
+                        icon: 'error',
+                        title: 'Invalid URL!',
+                        allowOutsideClick: false,
+                        text: 'Please use a valid URL',
+                        footer: '<a href="https://pocketurl.shkharsaxena.co.in/url/add">Try with Another URL</a>'
+                    }).then(function (){
+                        window.location = "https://pocketurl.shekharsaxena.co.in/url/add"
+                    })
+                <% } %> 
+
+                <%if(alert == '404'){%>
+                    swal.fire({
+                        icon: 'error',
+                        title: 'Oops!',
+                        allowOutsideClick: false,
+                        text: 'URL you are searching for is either invalid or expired. Please contact the sender!',
+                        footer: '<a href="https://pocketurl.shkharsaxena.co.in/">Go to HomePage</a>'
+                    }).then(function (){
+                        window.location = "https://pocketurl.shekharsaxena.co.in/"
+                    })
+                <% } %> 
+                <%if(alert == 'delete'){%>
+                    swal.fire({
+                        icon: 'success',
+                        title: 'Deleted!',
+                        allowOutsideClick: false,
+                        text: 'URL is deleted successfully!',
+                        footer: '<a href="/user/url">Go to URL Dashboard</a>'
+                    }).then(function (){
+                        window.location = "https://pocketurl.shekharsaxena.co.in/user/url"
+                    })
+                <% } %> 
+            </script>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head') %>
+        <title>PocketURL</title>
+</head>
+
+<body>
+    <!-- Loading GIF till the page loads -->
+    <%- include('partials/loading') %>
+        <!-- Main Home Page Navbar -->
+        <%- include('partials/navbar') %>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <br><br>
+                        <h1><b>Transactions</b></h1>
+                        <p class="lead">PocketURL, URLs on your fingertip.</p>
+
+                        <hr class="my-4">
+
+                        <p>PocketURL is a URL shortener with amazing features. PocketURL PRO allows you to manage and
+                            protect
+                            your URLs with an ease.</p>
+                        <br>
+
+                        <!-- <a href="" class="bg-red btn btn-lg text-white me-4 mt-4">My Dashboard <i class="fas fa-link"></i></a> -->
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="container mx-auto m-5 bg-lightBlue">
+                <div class="col-md-6 mx-auto p-1 pt-5 pb-5">
+                    <form action="/url/add" method="post">
+                        <h3 class="text-blue">Transaction Details</h3>
+                        <br>
+                        <% if(user.role){ %> 
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Invoice ID:</label>
+                            <input type="text" class="form-control" name="iid" value="<%=t.iid%>" required readonly>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Order ID:</label>
+                            <input type="text" class="form-control" name="oid" value="<%=t.oid%>" required readonly>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Payment ID:</label>
+                            <input type="text" class="form-control" name="pid" value="<%=t.pid%>" required readonly>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Amount:</label>
+                            <input type="text" class="form-control" name="amount" value="<%=t.amount%>" required readonly>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Payment Date:</label>
+                            <input type="text" class="form-control" name="date" value="<%=t.date%>" required readonly>
+                        </div>
+                        <br>
+                        <div class="alert alert-success" role="alert">
+                            Congratulations, You have subscribed to PocketURL Pro. 
+                        </div>
+                        <% } %> 
+                        <% if(user.role){ %> 
+                            <% }else{ %> 
+                                <a href="/pay" class="text-center text-white btn btn-lg bg-red">Buy PocketURL Pro</a>
+                                <br><br>
+                                <div class="alert alert-danger" role="alert">
+                                    You haven't done any transaction. Please subscribe to PocketURL Pro. 
+                                </div>
+                            <% } %> 
+                    </form>
+                </div>
+            </div>
+
+            <div class="bg-black">
+                <p class="m-0 text-center p-3 text-white"><b>&copy; PocketURL</b></p>
+            </div>
+    
+</body>
+
+</html>

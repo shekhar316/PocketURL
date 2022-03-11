@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head') %>
+        <title>PocketURL</title>
+</head>
+
+<body>
+    <!-- Loading GIF till the page loads -->
+    <%- include('partials/loading') %>
+        <!-- Main Home Page Navbar -->
+        <%- include('partials/navbar') %>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <br><br>
+                        <h1><b>Update URL</b></h1>
+                        <p class="lead">Update alias or long url.</p>
+
+                        <hr class="my-4">
+
+                        <p>PocketURL is a URL shortener with amazing features. PocketURL PRO allows you to manage and
+                            protect
+                            your URLs with an ease.</p>
+                        <br>
+
+                        <!-- <a href="" class="bg-red btn btn-lg text-white me-4 mt-4">My Dashboard <i class="fas fa-link"></i></a> -->
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="container mx-auto m-5 bg-lightBlue">
+                <div class="col-md-6 mx-auto p-1 pt-5 pb-5">
+                    <form action="/url/updateURL" method="post">
+                        <h3 class="text-blue">URL Details</h3>
+                        <br>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Long URL:</label>
+                            <input type="text" class="form-control" name="lurl" value="<%=url.longURL%>" required >
+                            <div id="emailHelp" class="form-text">Always use your url with http://example.com or https://www.example.com</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Old Custom Alias:</label>
+                            <input type="text" class="form-control" name="id" value="<%=url.shortid%>" required readonly>
+                            <div id="couponMsg" class="form-text"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">New Custom Alias:</label>
+                            <input type="text" class="form-control" name="surl" value="<%=url.shortid%>" required >
+                            <div id="couponMsg" class="form-text"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Expiration Date:</label>
+                            <input type="date" class="form-control" name="edate"  min="<%=new Date().toISOString().split('T')[0] %>" value="<%=url.edate%>" required >
+                            
+                        </div>
+                        <% if(user.role){ %> 
+                            <button type="submit" class="text-center text-white btn btn-lg bg-red">Update URL</button>
+                            <% }else{ %> 
+                                <div class="alert alert-danger" role="alert">
+                                    Updating the URL requires PRO subscription.
+                                  </div>
+                            <% } %> 
+                    </form>
+                </div>
+            </div>
+
+            <div class="bg-black">
+                <p class="m-0 text-center p-3 text-white"><b>&copy; PocketURL</b></p>
+            </div>
+            
+
+            
+   
+
+</body>
+
+</html>

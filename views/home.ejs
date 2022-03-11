@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+    <title>PocketURL</title>
+</head>
+<body>
+    <!-- Loading GIF till the page loads -->
+    <%- include('partials/loading') %>
+    <!-- Main Home Page Navbar -->
+    <%- include('partials/navbar') %>
+        <!-- Main Hero Jumbotron -->
+        <%- include('partials/hero') %>
+
+    <!-- Features Section -->
+    <div class="bg-lightBlue">
+        <div class="container mx-auto my-auto">
+            <br><br><br>
+            <h1 class="text-center text-blue"><b>PocketURL Features</b></h1>
+            
+            
+            <div class="row mx-auto my-auto p20">
+                <div class="col-md-4 mx-auto my-4">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="/images/site/qr.png" class="card-img-top mx-auto" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-red"><b>Short URL and QR</b></h5>
+                            <p class="card-text text-justify"><b>FREE</b><br>Shorten your long URLs with this powerful
+                                URL shortner tool and generate QR Codes to manage them easily.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mx-auto my-4">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img src="/images/site/custom.png" class="card-img-top mx-auto" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-red"><b>Custom Alias </b></h5>
+                            <p class="card-text text-justify"><b>Requires PRO</b><br>To shorten the URL, choose your own alias.
+                                As an example, <tt>https://pocketurl.shekharsaxena.co.in/yourCumtoAlias</tt></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mx-auto">
+                    <div class="card mx-auto my-4" style="width: 18rem;">
+                        <img src="/images/site/expired.png" class="card-img-top mx-auto" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-red"><b>Timed Control</b></h5>
+                            <p class="card-text text-justify"><b>Requires PRO</b><br>With PRO, Set a custom expiration date. Otherwise, Short URLs are deleted after 30 days of creation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Price Section  -->
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-md-6 pt-5 pb-1 p-3 text-center flex-center">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5N3zdAcav6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="col-md-6 p-5">
+                <br>
+                <br>
+                <h1 class="text-blue"><b>Get All At Lowest Cost</b></h1>
+                <br>
+                <h3 class="text-red"><b>Rs. 100.00 for lifetime</b> </h3>
+                <br>
+                <p>Make a payment of <b></b>Rs. 100.00 INR only and get PocketURL Pro for lifetime.</b></p>
+                <a href="/pay" class="bg-red btn btn-lg text-white me-4 mt-4">Get PocketURL Pro</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container table-responsive p-5">
+        <table class="table table-hover align-middle">
+            <thead>
+                <tr>
+                    <th scope="col" colspan="1" class="bg-lightBlue text-blue col-md-4">Features</th>
+                    <th scope="col" colspan="1" class="bg-blue text-white col-md-4 text-center">Basic/ Guest</th>
+                    <th scope="col" colspan="1" class="bg-red text-white col-md-4 text-center">Pro</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th colspan="1" scope="row">Unlimited Short URLs</th>
+                    <td colspan="1" class="text-center"><i class="fas fa-check-circle text-success"></i></td>
+                    <td colspan="1" class="text-center"><i class="fas fa-check-circle text-success"></i></td>
+                </tr>
+                <tr>
+                    <th colspan="1" scope="row">QR Code Generation</th>
+                    <td colspan="1" class="text-center"><i class="fas fa-check-circle text-success"></i></td>
+                    <td colspan="1" class="text-center"><i class="fas fa-check-circle text-success"></i></td>
+                </tr>
+                <tr>
+                    <th colspan="1" scope="row">Custom Alias</th>
+                    <td colspan="1" class="text-center"><i class="fas fa-times-circle text-danger"></i></td>
+                    <td colspan="1" class="text-center"><i class="fas fa-check-circle text-success"></i></td>
+                </tr>
+                
+                <tr>
+                    <th colspan="1" scope="row">Custom Link Expiry</th>
+                    <td colspan="1" class="text-center"><i class="fas fa-times-circle text-danger"></i><br>30 Days</td>
+                    <td colspan="1" class="text-center"><i class="fas fa-check-circle text-success"></i><br>Custom</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="bg-lightBlue">
+                    <th colspan="1" scope="row">Price</th>
+                    <td colspan="1" class="text-center"><b>FREE</b></td>
+                    <td colspan="1" class="text-center"><b>Rs. 10/- INR One Time</b></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <br>
+
+    <div class="container">
+        <br>
+        <h2 class="text-blue text-center"><b>FAQs</b></h2>
+        <br>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <span class="text-blue"> <b>What is a URL Shortner?</b> </span>
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    URL shortening is a technique on the internet in which a URL may be made substantially shorter and still direct to the required page.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <span class="text-blue"> <b>What are the benifits of URL Shortner?</b> </span>
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul>
+                      <li>They offer the ability to track the performance.
+                    <li>Get Analytical data like no of clicks.</li>
+                    <li> They use fewer of your precious characters.</li>
+                    <li> URL Shorteners Promote Sharing. </li>
+                    <li> People are used to them.</li>
+                    <li> They lead to a higher click-through rate.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <span class="text-blue"> <b>What is custom alias?</b> </span>
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    You may create a custom alias that can be intuitive and descriptive of your shortURL. This makes url easy to remember and share. Custom alias looks like <tt>www.pocketurl.shekharsaxena.co.in/yourAlias</tt>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      <span class="text-blue"> <b>What is a QR Code?</b> </span>
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    Basically, a QR code works in the same way as a barcode at the supermarket. It is a machine-scannable image that can instantly be read using a Smartphone camera and redirects you to the desired url.
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  <span class="text-blue"> <b>Why should I prefer QR over link?</b> </span>
+              </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                QR Code can make your bussiness to grow more. It is easy to scan a image rather than typing whole url.
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+
+    <br><br>
+
+
+
+    <%- include('partials/footer') %>
+
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<div class="container ps-5 pe-5">
+    <div class="row">
+        <div class="col-md-6">
+            <br><br>
+            <h1><b>PocketURL</b></h1>
+            <p class="lead">URLs on your fingertip.</p>
+
+            <hr class="my-4">
+
+            <p>PocketURL is a URL shortener with amazing features. PocketURL PRO allows you to manage and protect
+                your URLs with an ease.</p>
+            <br>
+            <% if(!user) {%> 
+                <a href="/auth/login/google" class="bg-blue btn btn-lg text-white me-4 mt-4">Login To Continue <i class="fab fa-google-plus-g"></i></a>
+            <% } else{%> 
+            <a href="/user/url" class="bg-red btn btn-lg text-white me-4 mt-4">My Dashboard <i class="fas fa-link"></i></a>
+            <% } %> 
+        </div>
+        <div class="col-md-6 flex-center mt-4">
+            <img src="/images/site/banner.png" class="banner-side-img" alt="">
+        </div>
+    </div>
+</div>

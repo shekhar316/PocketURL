@@ -1,0 +1,19 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/shekhars/pocketurl.shekharsaxena.co.in"
+PassengerBaseURI "/"
+PassengerNodejs "/home/shekhars/nodevenv/pocketurl.shekharsaxena.co.in/10/bin/node"
+PassengerAppType node
+PassengerStartupFile app.js
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+RewriteEngine On 
+RewriteCond %{HTTPS} off 
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION BEGIN
+<IfModule Litespeed>
+</IfModule>
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION END
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# This domain inherits the “PHP” package.
+# php -- END cPanel-generated handler, do not edit
